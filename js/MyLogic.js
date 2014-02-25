@@ -10,6 +10,28 @@ function DragView(target) {
 	this.lastDrag = {};
 }
 
+this.WatchDrag = function() {
+	if(!this.drag.length) {
+		return;
+	}
+
+	for(var d = 0; d<this.drag.length; d++) {
+		var left = $(this.drag[d].el.offset().left;
+		var top = $(this.drag[d].el).offset().top;
+
+		var x_offset = -(this.lastDrag.pos.x - this.drag[d].pos.x);
+		var y_offset = -(this.lastDrag.pos.y - this.drag[d].pos.y);
+
+		left = left + x_offset;
+		top = top + y_offset;
+
+		this.lastDrag = this.drag[d];
+
+		this.drag[d].el.style.left = left + 'px';
+		this.drag[d].el.style.top = top + 'px';
+	}
+}
+
 this.OnDragStart = function(event) {
 	var touches = event.originalEvent.touches || [event.originalEvent];
 	for(var t=0; t<touches.length; t++) {
