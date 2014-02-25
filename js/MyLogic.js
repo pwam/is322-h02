@@ -1,10 +1,16 @@
 var dragview = new DragView($(container));
-container.bind(“dragstart”, $.proxy(dragview.OnDragStart, dragview));
-container.bind(“drag”, $.proxy(dragview.OnDrag, dragview));
-container.bind(“dragend”, $.proxy(dragview.OnDragEnd, dragview));
+container.bind("dragstart", $.proxy(dragview.OnDragStart, dragview));
+container.bind("drag", $.proxy(dragview.OnDrag, dragview));
+container.bind("dragend", $.proxy(dragview.OnDragEnd, dragview));
 setInterval($.proxy(dragview.WatchDrag, dragview), 10);
 
-this.onDragStart = function(event) {
+function DragView(target) {
+	this.target = target[0];
+	this.drag = [];
+	this.lastDrag = {};
+}
+
+this.OnDragStart = function(event) {
 	var touches = event.originalEvent.touches || [event.originalEvent];
 	for(var t=0; t<touches.length; t++) {
 		var el = touches[t].target.parentNode;
