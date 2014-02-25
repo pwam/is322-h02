@@ -90,7 +90,25 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+@charset "UTF-8";
 
+@font-face {
+	font-family: "Imitation";
+  	src: url("IMIT.TTF");
+}
+#zoom {
+}
+#zoom2 {
+	left:300px;
+}
+#zoom3 {
+	left:600px;
+}
+.zoomProps{	  
+	height: 240px;
+        width: 230px;
+        position:absolute;
+}
 #zoomwrapper {
 	height: 377px;
 	width: 600px;
@@ -99,8 +117,8 @@ textarea {
 .polaroid {
 	text-align: center;
 	padding: 10px 10px 25px 10px;
-	background: #ee;
-	border 1px solid #fff;
+	background: #eee;
+	border: 1px solid #fff;
 	-moz-box-shadow: 0px 2px 15px #333;
 	-webkit-box-shadow: 0px 2px 15px #333;
 	border: 1px solid #dfdfdf;
