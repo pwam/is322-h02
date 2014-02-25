@@ -111,7 +111,19 @@ textarea {
 	padding-bottom:10px;
 	text-shadow: #333;
 }
-
+.upSky{
+	background: #FFFFFF;  
+}
+body{
+	background:url(../img/bg.jpg);
+}
+.welcome{
+	font-family: 'Bree Serif', serif;
+	font-size:24px;
+	color:#FFF;
+	text-shadow: 1px 1px 2px #363636;
+        filter: dropshadow(color=#363636, offx=1, offy=1);
+}
 
 
 
